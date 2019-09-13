@@ -22,8 +22,12 @@ h1 {
   p {
     font-family: Comic Sans MS;
     font-size: 30px;
-    background-color: black;
+    background: black;
     color: white;
+  }
+
+  h1 ~ span {
+    color:red !important;
   }
   
   
