@@ -1,12 +1,12 @@
 // Primjer 1
-/*
+
 console.log(a);
 console.log(b);
 var a = b;
 var b = 2;
 console.log(b);
 console.log(a);
-*/
+
 /* Sta se ovdje upravo desilo "ispod haube" */
 
 // Primjer 2
@@ -21,6 +21,7 @@ function b() {
   return c;
 }
 
+
 var d = function() {
   return b();
 };
@@ -34,7 +35,7 @@ var d = function() {
 function foo(bar){
   if(bar){
     console.log(baz);
-    let baz = bar; // sta ako ovo promijenimo u var
+    var baz = bar; // sta ako ovo promijenimo u var
   }
 }
 

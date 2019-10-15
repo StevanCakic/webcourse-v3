@@ -15,10 +15,9 @@ console.log(foo);
 console.log(bam);*/
 
 // sta ako dodamo "use strict";
-// "use strict"; na nivou bloka ! ne mora na vrhu fajla
+// "use strict"; //na nivou bloka ! ne mora na vrhu fajla
 
 // Primjer 2
-/*
 
 var foo = "bar";
 function bar(){
@@ -26,22 +25,29 @@ function bar(){
   var foo = "baz";
 
   function baz(foo){
-    foo = "bam";
-    bam = "yay";
+    var foo = "bam" + foo;
+    console.log(foo);
+    var bam = "yay";
+    return bam;
   }
-
+  var result = baz("abc");
+  console.log(result);
   baz();
-
+  return {
+    baz
+  }
 }
+
 
 bar();
 console.log(foo);
-console.log(bam);
+//console.log(baz);
 //baz(); //Error
-*/
+
 // Primjer 3
 
-var foo = function bar() {
+const foo2 = function bar() {
+  
   var foo = "baz";
 
   function baz(foo){
@@ -50,6 +56,6 @@ var foo = function bar() {
   }
   baz();
 }
-
-foo();
+console.log(foo2);
+foo2();
 // bar(); //Error
