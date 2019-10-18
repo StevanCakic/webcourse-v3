@@ -23,53 +23,59 @@ console.log(document.forms[0]); //pristup elementu niza
 console.log(document.links); // svi linkovi sa stranice
 console.log(document.images); //sve slike sa stranice
 */
+
 // 2. Traženje HTML elemenata
 // a) getElementById
 // console.log(document.getElementById("header-title")); // trazimo element po IDu
-var headerTitle = document.getElementById("header-title");
-
 /*
+var headerTitle = document.getElementById("header-title");
+console.log(document.querySelector("#header-title"));
+
 console.log(headerTitle);
 
 console.log(headerTitle.textContent);
 console.log(headerTitle.innerText);
 
-headerTitle.innerHTML = "<h3>Hello</h3>"; // dodavanje HTML h3 u headerTitle
-
-headerTitle.style.borderBottom="solid 3px #000"; // camel case umjesto - 
-
+console.log(headerTitle.innerHTML);
+console.log(headerTitle.nodeValue);
 */
+//headerTitle.innerHTML = "<h3>Hello</h3>"; // dodavanje HTML h3 u headerTitle
+
+//headerTitle.style.borderBottom="solid 3px #000"; // camel case umjesto - 
+
 
 // b) getElementsByClassName
-var items = document.getElementsByClassName("list-group-item");
-// console.log(items);// HTML collection
-// console.log(items[1]);
 
+var items = document.getElementsByClassName("list-group-item");
+console.log(items);// HTML collection
+console.log(items[1]);
+/*
 // Napomena, HTML elementi najčešće se imenuju pomoću klasa
 // document.getElementsByClassName("list-group-item")[0]
-/* items[1].textContent = "Hello 2";
+items[1].textContent = "Hello 2";
 items[1].style.fontWeigth = "bold";
 items[1].style.backgroundColor = "yellow";
-*/
+
 
 // Kako bismo sada promijenilo bacground color
 // svim itemima u plavu ?
-/*
+
 for(var i = 0; i < items.length; i++){
     items[i].style.backgroundColor = "blue";
 }
-*/
 
+*/
 // items.style.background = "blue" //mozda ovako?
 // Neeee
 
 // c) getElementsByTagName
+/*
 var li = document.getElementsByTagName("li");
 // console.log(li);
 
 // d) querySelector
 var header = document.querySelector("#main-header");
-/*
+
 
 console.log(header);
 var input = document.querySelector("input");
@@ -89,18 +95,19 @@ secondItem.style.color = "coral";
 */
 
 // e) querySelectorAll
+/*
 var titles = document.querySelectorAll(".title");
 
-// console.log(titles);
+console.log(titles);
 // videte li koji je tip podatka titles?
 
 
 // Kako biste selektovali sve elemente koji imaju class name
 // card i card-body
 
-// console.log(document.querySelectorAll(".card, .card-body"));
+console.log(document.querySelectorAll(".card, .card-body"));
 
-/*
+
 var odd = document.querySelectorAll("li:nth-child(odd)");
 for(var i = 0; i < odd.length; i++){
     odd[i].style.backgroundColor = "grey";
@@ -109,37 +116,39 @@ for(var i = 0; i < odd.length; i++){
 // 3. Obilazak DOMa
 var itemList = document.querySelector("#items");
 // parentNode
-/*
+
+console.log(itemList);
 console.log(itemList.parentNode);
 itemList.parentNode.style.backgroundColor = "grey";
 
 // mozete da trazite parent node od parent node od parent noda...
 console.log(itemList.parentNode.parentNode);
-*/
+
 
 // parentElement
-/*
+
 console.log(itemList.parentElement);
 itemList.parentElement.style.backgroundColor = "grey";
 console.log(itemList.parentElement.parentElement);
-*/
+
 
 // childNodes
 
-/*console.log(itemList.childNodes);
-console.log(itemList.childNodes[0]);*/
+console.log(itemList.childNodes);
+console.log(itemList.childNodes[0]);
+/*
 // Odakle ovi tekst cvorovi?
 // Kako da ih uklonimo?
 // Ne preporucuje se u praksi zbog hvatanja tekst cvorova !
 
 // children
 // sta ako dodamo neki tekst prije prvog li elementa u ul?
-/*
+
 console.log(itemList.children);
 console.log(itemList.children[0]);
 itemList.children[0].style.backgroundColor = "yellow";
-*/
 
+*/
 // firstChild
 // console.log(itemList.firstChild);
 
@@ -180,7 +189,7 @@ itemList.previousElementSibling.style.color = "green";
 // createElement
 
 // Kreiranje praznog div-a
-/*
+
 var newDiv = document.createElement("div");
 
 // Dodavanje klase
@@ -193,18 +202,18 @@ newDiv.id = "hello1";
 newDiv.setAttribute("title", "Hello Div");
 
 console.log(newDiv); // kreiranje praznog div elementa
-*/
+
 // Kreiranje tekst cvora
-/*
+
 var newDivText = document.createTextNode("Hello World");
 
 console.log(newDivText);
 
 // Dodavanje teksta u div
 newDiv.appendChild(newDivText);
-*/
+
 // Kako dodajemo element u DOM?
-/*
+
 // Selektujemo parent element u koji zelimo da dodamo novokreirani element
 var container = document.querySelector("header .container");
 
@@ -214,7 +223,7 @@ var h1 = document.querySelector("header h1");
 // dodamo taj element
 container.insertBefore(newDiv, h1);
 
-*/
+
 
 // 5. Brisanje i Replace DOM elementa
 
@@ -228,7 +237,7 @@ child.parentNode.removeChild(child);
 // kako ovo jos mozete da zapisete ?
 
 // b) Replace
-/*
+
 var parent = document.getElementById("items");
 var child = parent.firstElementChild;
 var para = document.createElement("li");
@@ -236,7 +245,7 @@ para.className = "list-group-item";
 var node = document.createTextNode("This is new.");
 para.appendChild(node);
 parent.replaceChild(para, child);
-*/
+
 
 // Dodavanje i brisanje klasa sa elementa i contains metod
 
@@ -255,7 +264,7 @@ function walkTree(root, level) {
   } else {
     console.log(level + root.nodeName);
   }
-  for (const child of root.childNodes) {
+  for (const child of root.children) {
     walkTree(child, level + " ");
   }
 }
