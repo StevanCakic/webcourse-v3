@@ -14,11 +14,11 @@ let noneOnce = {
     once: false
 };
 
-outer.addEventListener('click', noneOnceHandler, noneOnce);
+outer.addEventListener('click', noneOnceHandler);
 // outer.addEventListener('click', onceHandler, once);
 // outer.addEventListener('click', function(e) { captureHandler(e, "outer")}, capture);
 
-inner.addEventListener('click', noneCaptureHandler, noneCapture);
+inner.addEventListener('click', noneCaptureHandler);
 // inner.addEventListener('click', (e) => captureHandler(e, "inner"), capture);
 
 function onceHandler(event) {

@@ -1,7 +1,8 @@
+/*
 function buttonClick() {
     console.log("Button Clicked!");
-    // document.getElementById("header-title").textContent = "Changed"
-    // document.querySelector("#main").style.backgroundColor = "grey";
+    document.getElementById("header-title").textContent = "Changed"
+    document.querySelector("#main").style.backgroundColor = "grey";
 }
 
 
@@ -10,10 +11,9 @@ function buttonClick() {
 // Prvi korak
 var button = document.getElementById("button");
 
+
 // Drugi korak
-/*button.addEventListener("click", function () {
-    console.log(123);
-})*/
+button.addEventListener("click", buttonClick);
 
 // Zasto ovo nije bas dobro, tj. da je event handler
 // anonimna funkcija ?
@@ -22,12 +22,10 @@ var button = document.getElementById("button");
 // na button ?
 
 // 3. Uklanjanje eventa
-// button.addEventListener("click", buttonClick);
-// button.removeEventListener("click", buttonClick);
-// Zasto ovo ne radi ?
+button.addEventListener("click", buttonClick);
+button.removeEventListener("click", buttonClick);
 
-// Kako da proradi?
-
+*/
 // 4. Event parametar
 function buttonClicked(e) {
     console.log(e);
@@ -58,7 +56,7 @@ function buttonClicked(e) {
 // sta se desi ako ovu funkciju dodamo
 // na button
 
-// button.addEventListener("click", buttonClicked);
+button.addEventListener("click", buttonClicked);
 
 
 // 5. Basic mouse events
@@ -72,13 +70,13 @@ function buttonClicked(e) {
 
 
 var box = document.getElementById("box");
-// box.addEventListener("mouseenter",runMouseEvent);
-// box.addEventListener("mouseleave",runMouseEvent);
+box.addEventListener("mouseenter",runMouseEvent);
+box.addEventListener("mouseleave",runMouseEvent);
 
-// box.addEventListener("mouseover",runMouseEvent);
-// box.addEventListener("mouseout",runMouseEvent);
+box.addEventListener("mouseover",runMouseEvent);
+box.addEventListener("mouseout",runMouseEvent);
 
-// box.addEventListener("mousemove", runMouseEvent);
+box.addEventListener("mousemove", runMouseEvent);
 
 
 function runMouseEvent(e) {
@@ -99,8 +97,8 @@ function runMouseEvent(e) {
 var itemInput = document.querySelector("input[type='text']");
 var form = document.querySelector("form");
 
-// itemInput.addEventListener("keydown", runKeyboardEvent);
-// itemInput.addEventListener("keyup", runKeyboardEvent);
+itemInput.addEventListener("keydown", runKeyboardEvent);
+itemInput.addEventListener("keyup", runKeyboardEvent);
 // sta ako drzim key
 // itemInput.addEventListener("keypress",runKeyboardEvent);
 
@@ -110,8 +108,8 @@ var form = document.querySelector("form");
 // itemInput.addEventListener("focus", runKeyboardEvent);
 // itemInput.addEventListener("blur", runKeyboardEvent);
 
-// itemInput.addEventListener("cut", runKeyboardEvent);
-// itemInput.addEventListener("paste", runKeyboardEvent);
+itemInput.addEventListener("cut", runKeyboardEvent);
+itemInput.addEventListener("paste", runKeyboardEvent);
 
 // 9. More events
 
@@ -124,24 +122,26 @@ var select = document.querySelector("select");
 
 function runKeyboardEvent(e) {
     // Za 9. dio makni komentar
-    e.preventDefault();
+    // e.preventDefault();
     console.log("Event type: " + e.type);
     console.log(e.target.value);
     // Za 7. dio makni komentar
-    // document.getElementById("output").innerHTML = "<h3>" + e.target.value + "</h3>"
+    document.getElementById("output").innerHTML = "<h3>" + e.target.value + "</h3>"
     
     // Zadatak 1
     // TODO
-    /*
+    
     if(e.keyCode === 65){
         alert("Neko je unio slovo a");
-    }*/
-    
+    }
+
     // Zadatak 2
     // TODO
-    /*
+
+    console.log(e.type);
+    
     if(e.type === "cut"){
         const body = document.getElementsByTagName("body")[0];
         body.style.display = "none";
-    }*/
+    }
 }
