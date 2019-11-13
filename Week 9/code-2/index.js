@@ -1,11 +1,14 @@
 // Primjer 1
-var c = {greeting: "Hi"};
+var c = {greeting: "Hi", name: "Marko"};
 var d;
 
-d = c;
+d = { ... c};
 c.greeting = "Hello";
 console.log(c);
 console.log(d);
+
+let f = {name: "Janko", ...c}
+console.log(f);
 
 // Primjer 2
 function changeGreeting(obj){

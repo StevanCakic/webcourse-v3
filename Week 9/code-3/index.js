@@ -1,6 +1,8 @@
 // Primjer 1
 
 try {
+    const a = 1;
+    a = 2;
     adddlert("Welcome guest!");
 }
 catch (err) {
@@ -11,7 +13,7 @@ catch (err) {
 // Funkcija provjerava da li je parametar x u itervalu (5,10), ako nije javlja gresku
 function myFunction(x) {
     try { 
-        if(x == "") throw "empty";
+        if(x === "") throw "empty";
         if(isNaN(x)) throw "not a number";
         x = Number(x);
         if(x < 5) throw "too low";
@@ -29,3 +31,5 @@ myFunction(4);
 myFunction(6);
 myFunction(11);
 myFunction("abc");
+myFunction("");
+myFunction(0);
