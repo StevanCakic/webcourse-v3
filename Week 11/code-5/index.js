@@ -1,5 +1,5 @@
 let isLoading = true;
-let myRequest = "https://jsonplaceholder.typicode.com/todos";
+let myRequest = "https://api.myjson.com/bins/dnmhe";
 
 fetch(myRequest).then(function (response) {
     var contentType = response.headers.get("content-type");

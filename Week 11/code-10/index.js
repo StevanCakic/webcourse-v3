@@ -1,6 +1,7 @@
-const url = "https://api.github.com/user";
+const url = "https://api.github.com/users";
 
 function checkStatus(response) {
+    console.log(response)
     if (response.status === 200) {
         return Promise.resolve(response);
     } else {

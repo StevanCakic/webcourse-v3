@@ -10,7 +10,7 @@ function primjer1() {
         console.log(value); // Success!
     }, reason => {
         console.log(reason); // Error!
-    });
+    })
 }
 
 // Following, an example to demonstrate the asynchronicity of the then method
@@ -37,6 +37,8 @@ function primjer2() {
     // "this gets called after the end of the main stack. the value received and returned is: 33"
     // Promise {[[PromiseStatus]]: "resolved", [[PromiseValue]]: 33}
 }
+
+primjer2();
 
 // If the function passed as handler to then returns a Promise, 
 // an equivalent Promise will be exposed to the subsequent then in the method chain.
@@ -177,3 +179,5 @@ function primjer8() {
         console.log('rejected', e); // "rejected", 20
     });
 }
+
+primjer8();

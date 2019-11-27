@@ -1,8 +1,12 @@
 
 fetch("https://api.github.com/users")
     .then(function(response) {
-        console.log(response);
-        return response.json();
+        if(response.status === 200){
+            return response.json();
+        } else {
+            return "Greska"
+        }
+        
     })
     .then(function(jsonData){
         console.log(jsonData);

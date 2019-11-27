@@ -64,10 +64,10 @@ function addPost(e) {
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },// nekad saljemo serveru auth da bismo mogli da bi server prihvatio nas request
-        body: JSON.stringify({ title: title, body: body })
+        body: JSON.stringify({ title, body })
     })
         .then((res) => res.json())
         .then((data) => console.log(data))
