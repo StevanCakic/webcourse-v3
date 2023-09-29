@@ -14,6 +14,7 @@ console.log(foo); // zasto sad string
 
 foo = baz - "";
 console.log(foo); // sad opet broj, ...?
+console.log(10)
 
 foo = "123";
 if(foo) { // sta se sada desava sa foo
